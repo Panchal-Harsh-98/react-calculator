@@ -1,8 +1,14 @@
-import React from 'react';
+import { React, useContext } from 'react';
+import CalculatorContext from '../context/CalculatorContext';
 
 function CalcButton({ text, isfunctionButton }) {
+  const { doChangeDigit } = useContext(CalculatorContext);
+  const handleSubmit = () => {
+    doChangeDigit(text);
+  };
   return (
     <button
+      onClick={handleSubmit}
       type='button'
       style={{ height: '50px' }}
       className={`flex-1 ${

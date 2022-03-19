@@ -1,6 +1,10 @@
-import React from 'react';
+import { React, useContext } from 'react';
 import CalcButton from '../components/CalcButton';
+import CalculatorContext from '../context/CalculatorContext';
+
 function ButtonPanel() {
+  const { setDigit } = useContext(CalculatorContext);
+
   return (
     <div className='flex flex-row flex-wrap'>
       <div className='w-full flex'>
